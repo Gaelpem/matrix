@@ -25,3 +25,5 @@ information en plus
  . C'est une methode de l'objet fichier. Elle renvoie tout le contenu du fichier sous forme d'une
  seule chaine de caracteres
   
+- git status -> affiche l'etat de ton depot : ce que Git voit comme nouveau, modifié ou pret à etre
+enregistré. C'est la commande à taper avant chaque commit, pour verifier ce que tu t'appretes à rendre
