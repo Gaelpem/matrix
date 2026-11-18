@@ -1,0 +1,27 @@
+
+- Son action (son "effet")
+. Certaines fonctions font quelque chose quand on les appelle,
+peu importe ce qu'on fait de leur resultat. load_dotenv() lit
+.env et cree les variables d'environnment. Cette action a lieu
+des l'appel, que tu ranges le resultat
+
+- Sa valeur renvoyée
+En plus, elle renvoie une valeur: True ou false, pour dire
+si elle a trouvé un fichier .env .Cette valeur n'est qu'une
+information en plus
+
+- is not ne s'utilise pas avec une chaine is et is not servent seuelement pour None
+
+- __file__ : le chemin du fichier en cours
+
+- open() : ouvrir un fichier
+ . open recoit un chemin et ouvre le fichier pour qu'on puisse le lire. Elle renvoie un objet "fichier ouvert", pas encore le texte
+ . On l'utilise presque toujours avec le mot-clé
+ WITH
+ with open("notes.txt") as fichier:
+ with veut dire: "ouvre le fichier, fais ce qui est en dessous, puis referme-le automatiquement
+
+ - read() : lire tout le texte
+ . C'est une methode de l'objet fichier. Elle renvoie tout le contenu du fichier sous forme d'une
+ seule chaine de caracteres
+  

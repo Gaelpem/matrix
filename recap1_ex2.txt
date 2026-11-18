@@ -1,0 +1,29 @@
+- OS (operating system d'exploitation), permet à ton programme Python de dialogue avec l'ordinateur
+. Des que ton programme a besoin d'une information ou d'une action du systeme (fichiers, chemins, variable d'environment)
+c'est OS. Pour l'ex2, c'est lui qui fait le lien entre sa congfiguration et ton code
+
+- MATRIX_MODE -> est l'une des 5 variables imposees par le sujet. Elle indique au programme dans quel mode il tourne:
+. developement : tu es en train de developper et tester, sur ta machine 
+. production : le programme tourne "pour le vrai", chez les utilisateurs, avec des vraies données
+
+- POURQUOI DEUX MODES? 
+. Un meme programme ne doit pas se comporter pareil dans les 2 situations.
+.env -> sert à donner des valeurs à ton programme, sans les ecrire dans le code
+
+ - load_dotenv() -> lit ton fichier .env et transforme chaque ligne NOM=valeur en variable d'environnement
+Ne colle pas le sien par-dessus. Le .env sert seuelement à completer
+ce qui manque
+
+Une variable d'environnement, c'est une etiquette avec une valeur, que le systeme donne à ton programme quand il demarre. 
+
+- os.getenv("NOM") -> lit la valeur de la variable d'environnement qui s'appelle NOM:
+
+- dotenv -> est le nom d'import de la bibliotheque python-dotenv,
+celle que tu as installée avec pip.
+Elle sert à lire un fichier .env et à transformer chacune de ses lignes NOM=valeur en variable d'environnement.
+Sa fonction principale, c'est LOAD_DOTENV()
+Sans elle, Python ignore completement ton fichier .env, et os.getenv("MATRIX_MODE") renverrait None.
+
+- L'avantage d'un dictionnaire, c'est justement qu'on peut aller
+chercher une valeur directement par sa clé, sans boucle
+
