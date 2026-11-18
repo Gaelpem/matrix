@@ -1,0 +1,38 @@
+- pip -> c'est l'outils officiel integré à Python qui sert de gestionnaire
+de paquets. Il te permet de telecharger et d'installer des bibliotheque tierces 
+(comme pytest) depuis le web en une simple commande
+
+- NUMPY -> pour les calculs numeriques
+- PANDAS -> pour le charger, nettoyer et manipuler des tableaux de données
+- MATPLOTLIB -> pour faire des graphiques et presenter les resultats
+- pip install -r requirements.txt -> Le -r veut dire "lis la liste dans ce fichier" -> pip install alors d'un coup.
+
+- IMPORTLIB :un module avec des fonctions
+. C'est un module de la bibliotheque standard, comme sys ou os.
+. Comme une chaine peut etre rangée dans une variable, le nom peut etre decidé pendant que le programmme tourne:
+. venir d'une liste, d'un fichier, de ce que tape l'utilisateur...
+
+- import numpy : le nom est ecrit en dur dans le code
+- importlib : le nom est une chaine, donc il peut venir d'une variable
+
+liste_packages = ["pandas", "matplotlib", "numpy"]
+for package in liste_packages:
+    try:
+        importlib.import_module(package)
+        # importlib : le module qui contient des outils pour importer
+        # .import_module : la fonction de ce module qui fait l'import
+        # (package) : ce que tu lui donnes, ctd ta variable, qui contient un nom sous forme 
+        
+    except ModuleNotFoundError as e:
+        print(e)
+
+- Les paquets ont été installés dans le venv uniquement.Hors venv, le Python global ne les trouve pas, d'ou No module name
+ 
+- return -> la fonction s'arrete immmédiatement, meme au milieu d'une boucle
+
+- Une liste vide est considérée comme "fausse" dans un if, et une liste
+non vide comme "vrai".
+
+- Un import n'est pas obligé d'etre en haut du fichier. Il peut aussi etre ecrit à l'interieur d'une fonction. 
+
+

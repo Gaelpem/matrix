@@ -1,0 +1,27 @@
+- LE VENV
+ . Un venv est un dossier isolé avec son propre site-packages. Les paquets installés
+   dedans n'affectent pas le reste de la machine
+ . On ne le rend pas sur Git : il se recrée en une commande, d'ou le .gitignore.
+ 
+ - LES COMMANDES
+ . python3 -m venv nom -> crée le venv
+ . source nom/bin/activate met nom/bin/ en tete du PATH ,donc python3 devient celui du venv
+ . L'activation ne deplace pas : elle change quel Python est lancé 
+
+ - LA DETECTION
+ . sys.prefix correspond au Python actuel, sys.base_prefix au Python d'origine
+ . S'ils sont différents, on est dans un VENV
+ . Ca marche meme sans activer, parce que c'est Python qui lit pyvenv.cfg au démarrage
+
+ - OS (pour operating system, systeme d'exploitation) -> permet à ton programme de dialoguer avc l'ordinateur :
+ . manipuler des chemins avec os.path, comme tu l'as fais avec basename pour extraire le nom du venv. os.path.join
+ assemble un chemin, os.path.exists verifie qu'un fichier existe;
+ . gerer fichiers et dossier: lister, creer, renommer;
+ . lire les variable d'environment avec os.environ ou os.getenv.
+
+ - SITE -> est bcp plus specialisé. Il gere ou Python cherche les paquets  installés. Au demarrage, python
+ l'utilise automatiquement pour ajouter des dossiers site-packages à la liste des endroits ou chercher les imports.
+ . Au demarrage, Python l'utilise automatiquement pour ajouter les dossier site-package à la liste des endroits ou 
+ chercher les imports. Toin tu t'en es servi pour demander cds emplacement avc getsitepackages()
+ 
+ En resumé: OS sert à parler à la machine, et SITE à savoir ou sont les paquetss

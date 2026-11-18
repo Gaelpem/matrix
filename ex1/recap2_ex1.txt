@@ -1,0 +1,25 @@
+- GERER UN PAQUET MANQUANT
+. Un important raté leve une ModuleNotFoundError. Sans protection, le programme plante
+. try / except / else : le try essaie, le except s'execute seulement si ca echoue, le else seulement si ca reussit
+. import numpy prend un nom ecrit en dur. importlib.import_module(nom) prend une chaine, donc une version : c'est ce qui permet la boucle
+. module.__version__ donne la version de la plupart des paquets 
+
+- PYTHON execute le fichier de haut en bas. Les imports en haut de fichier s'excutent tout de suite,
+au tout debut. Si l'un echoue, le programme s'arrete la 
+
+- POURQUOI 1 ? Quand un programme se termine, il renvoie un nombre au terminal, appelé code de sortie:
+. 0 veut dire "tout s'est bien passé"
+. 1 veut dire "je me suis arreté à cause d'un probleme"
+
+- POETRY
+. C'est un "pip amelioré": la liste des paquets est dans pyproject.toml, il cree le venv tout
+seul et fige toutes les versions dans poetry.lock, ce qui rend le projet reproductible
+. Il s'installe à part du projet (recommandé: avec pipx), pas dans ton venv
+. Mon venv actuel reste utile : c'est la methode pip. Poetry aura son propre venv. Le sujet veut les 2. 
+
+- NUMPY.RANDOM
+. Il sert à fabriquer tes données, pas à les trouver.
+. uniforme donne des valeurs entre 2 bornes, randint des entiers, normal des valeurs autour d'une moyenne
+. size fixe le nombre de valeurs(1000), et le résultat est un ndarray
+. default_rng est la methode moderne recommandé
+. help(...) sert à lire la doc d'une fonction, et q à en sortir. Ses exemples donnent souvent des pistes 

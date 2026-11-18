@@ -1,0 +1,30 @@
+
+- pip installe des bibliotheques (pandas numpy) dnas l'environment actif, pour que ton code les importe
+- pipx installe des programmme (poetry, flake8...) que tu lances comme des commandes,
+chacun isolé pour ne pas entrer en conflit avec tes projet 
+
+- pip pour les bibliotheque de ton projet, pipx pour les outils que tu utilises commme des commandes
+
+- try / except / else gere une erreur au lieu de planter
+- Poetry decrit le projet dans pyproject.toml, cree le venv tout seul (dans un cache central)
+et fige toutes les versions dans poetry.lock .Resultat: un environnement "reproductible"
+- importlib.import_module(nom) import un module à partir d'une variable
+- sys.exit(1) arrete le programmme avec un code d'echec, et 0 signifie le succés.
+
+- LA BOITE À OUTILS DATA
+. numpy genere et calcule (random.uniforme, ndarray, mean)
+. pandas organise et analyse (DataFrame, df["colonne"], describe())
+. matplotlib visualise (hist, savefig)
+. C'est le cycle de la data: générer ou charger , analyser visualiser
+
+POETRY SAIT FAIRE 2 METIERS DIFFERENTS:
+- Gerer les dependances: installer pandas, numpy, matplotlib dans un venv, avec des versions
+figées
+- Fabriquer un paquet : transformer ton projet en bibliotheque installable par d'autres, et
+meme la publier dur PyPI, comme numpy ou pandas l'ont été
+
+- package-mode = false ->  Ce projet est un un script, pas une bibliotheque. Installe seulement
+ses dependances, ne cherche pas à installer lui-meme
+
+Une image : une bibliotheque , c'est comme une boite à outils. Elle ne construit rien toute seule.
+C'est toi (ton script) qui ouvres la boite (import) et prends un outil (pandas.DataFrame()) pour construire quelque chose

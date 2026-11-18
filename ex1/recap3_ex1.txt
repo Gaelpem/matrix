@@ -1,0 +1,44 @@
+- NUMPY C'EST QUOI?
+. NUMPY est la biblitheque de base pour les calcules sur des nombres en Python.
+Preque tout l'ecosysteme data et IA repose dessus: pandas, matplotlib...
+Son objet central est le NDARRAY, un tableau de nombres
+
+- GENERER DES NOMBRES AU HAZARD : NUMPY.RANDOM
+
+        fonction            Genere                                  Exemple de résultat 
+uniform(bas, haut, size)    des nombres à virgule, tous problale    - 42.17, 3.56, 87.03
+randint(bas, haut, size)    des entiers entre bornes                - 4, 17, 9
+normal(moyenne,ecart,size)  des nombre regroupés autour d'une moyenne - la plus proche de 50 rarement 5 ou 95
+
+SIZE -> indique combien de valeurs generer. Sans size, tu n'obtiens qu'un seul nombre.
+
+- ACCEDER AUX VALEURS
+. s[0] : la premiere valeur
+. s[-1] : la derniere
+. s[:5] : les 5 premieres
+. len(s) : le nombres
+
+- DES STATISTIQUE EN UNE LIGNE
+Un ndarray sait calculer tout seul:
+
+. s.mean(): la moyenne;
+. s.min() / s.max() : le plus petit / le plus grand;
+. s.std() : l'ecart-type, qui mesure à quel point les valeurs sont dispersées
+
+- PANDAS C'EST QUOI? 
+. pandas range les données dans un tableau : le DataFrame (lignes et colonnes nommées)
+Une seule colonnes s'apelle une Series
+
+. On cree un DataFrame à partir d'un DICTIONNAIRE ({"colonne" : données}) ou d'un fichier (read_csv)
+. Les commandes pour regarder : head(), shape, describe()
+. On selectionne une colonne avec df["nom"], et on filtre avec une condition entre crochets: df[df["nom"] > 50]
+. Pas de boucles : les calculs s'appliquent à toute la colonne d'un coup, comme avec numpy
+. pandas est construit sur numpy: chaque colonne contient en fait un tableau numpy.
+. Le cycle de base en data : charger, regarder, filtrer, calculer, sauvegarder
+
+- numpy, c'est la calculatrice: il manipule des suites de nombres bruts et fait des calculs tres rapides;
+- pandas, c'est Excel : il organise les données dans un tableau avec des noms de colonnes, et il permet 
+de les charger,  filtrer, trier, regrouper, combiner et sauvegarder
+
+- NUMPY CALCULE, PANDAS ORGANISE ET ANALYSE
+

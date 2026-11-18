@@ -1,0 +1,37 @@
+- La regle 
+Un import s'execute au moment ou Python lit la ligne:
+. en haut du fichier, il est lu tout de suite, au lancement du programme
+. dans une fonction, il n'est lu que quand la fonction est appelé
+On met les imports dans la fonction pour qu'ils ne s'execute qu'apres avoir verifié que les 
+paquets existent. Ta verification a ainsi le temps de faire son travail
+
+- pipx ensurepath : Cette commande ajoute ce dossier au Path dans le fichier de congfiguration de
+ton shell (~/.zshrc pour zsh)
+
+- C'EST QUOI PYPROJECT.TOML
+. C'est le fichier qui decrit ton projet pour Poetry. Il est ecrit TOML, un format 
+simple organisé en sections entre crochets, comme [projet], avec des lignes clé = valeur en dessous
+- C'est qu'il contient :
+    . le nom du projet, sa version et une description
+    . la version de python requise. Le sujet demande Python 3.10 ou plus
+    . les dependances : pandas, numpy, matplotlib, l'equivalent de ton requirement.txt
+    . une section [build-system] qui indique quel outil gere le projet
+
+Poetry a créé un venv tout seul, sans "python3 -m venv ni activate". Et il ne l'a pas mis dans ton dossier ex1/,
+mais dans un dossier de cache central. C'est une grosse difference avec matrix_env
+
+
+- Avec pip, le programme tourne dans matrix_venv, que j'ai créé moi-meme dans mon dossier de projet.
+Avec Poetry, il tourne dans un venv que Poetry a créé tout seul, dans un dossier de cache à plupart
+
+- pip : c'est moi qui fais tout. Je crée le venv, je l'active, puis j'installe avec requirements.txt
+- Poetry : il gere tout. Poetry install crée le venv et installe, et poetry run lance le programme dedans sans activation
+
+- LA DIFFERENCE PLUS IMPORTANTE
+. Avec pip, requirements.txt ne liste que mes 3 paquets. Avec Poetry, poetry.lock enregistre la version 
+exacte des 12 paquets, y compris les dependancess de mes dependances. Quand j'ai supprimé le venv de Poetry et 
+refait poetry install, il a réinstallé exactement  les memes versions. C'est ca, la reproductibilité 
+
+- C'EST QUOI GITIGNORE
+. ".gitignore" est un simple fichier texte qui dit à GIT quels fichiers et dossiers il doit ignorer, ctd 
+ne jamais suivre ni envoyer dans ton dépot ,

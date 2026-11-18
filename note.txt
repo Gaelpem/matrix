@@ -1,0 +1,49 @@
+Un venv (pour virtual environment, environnement virtuel), c'est un espace Python isolé pour un projet
+-> Un venv, c'est donner à chaque projet sa propre petite cuisine, avec son propre placard. Ce que tu installes 
+dedans ne touche pas aux autres 
+
+- C'EST QUOI UN  VENV
+-> Un environment  virtuel, c'est un espace Python isolé pour un projet.
+-> Concrement, c'est un dossier(matrix_env) qui a son propre dossier de paquets(site-packages)
+-> Ce que tu installes dedans reste dedans. 
+-> Ca evite les conflits de versions entre projet et ne  pollue pas le python de ta machine
+
+- LES COMMANDES 
+-> python -m venv matrix_env : -m -> execute un module, ici venv, qui crée le dossier matrix_env
+-> source matrix_env/bin/activate : source execute le script dans ton terminal actuel. Le script
+met matrix_env/bin en tete du PATH, crée la variable VIRTUAL_ENV et ajoute (matrix_env) au prompt.
+-> deactivate remet tout comme avant 
+-> L'activation ne te deplace pas de dossier : pwd ne change pas. Elle change seulement quel Python
+ est utilisé: which python3 change
+
+- Ce qu'il y a dans le venv
+-> bin/ contient python, pip et les scripts activate, avec une version par type de shell
+-> python, python3 et python3.12 sont des liens symboliques(les fleches), des raccourcis 
+vers le Python global. Ce ne sont pas de copies. 
+. lib/python3.12/site-packages/ est l'endroit ou les paquets sont installés.
+. pyvenv.cfg est le fichier qui dit à Python "tu es dans un venv"
+. Un packet (package), c'est du code ecrit par d'autres que tu peux reutiliser dans ton programme
+au lieu de tout réécrire toi meme
+
+- Le module sys 
+-> sys, pour system, permet à ton programme de se renseigner sur le Python qui l'execute
+-> L'interpreteur interactif (python3 seul, invite >>>) sert à tester ligne par ligne, et dir(sys) liste tous
+ses attributs.
+
+-> Les attributs base_... pointent toujours vers l'installation global 
+-> sys.pycache_prefix ne concerne pas les venv
+
+-> if __name__ == '__main__'
+"Si le fichier est celui qu'on a lancé directement, alors.."
+
+- if : "si";
+- __name__ : "le nom de ce fichier, tel que Python le voit"
+- == : "est egal à ";
+- '__name__': " la valeur special qui veut dire fichier principal"
+
+Soit, littéralement: "Si le nom de ce fichier est le fichier principal ..."
+Et avec la ligne suivant, ton bloc complet se lit ainsi:
+"Si on a lancé ce fichier directement (et pas importé), alors exécute main() "
+
+- SYS.PREFIX -> donne le dossier du venv, par exemple .../python8/matrix_env
+- SYS.EXECUTABLE -> donne le chemin complet du programme Python qui execute ton code en ce moment
