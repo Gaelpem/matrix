@@ -25,12 +25,12 @@ def analyse() -> None:
     import pandas
     import matplotlib.pyplot
     print("\nAnalyzing Matrix data...")
-    s = numpy.random.uniform(0, 100, 1000)
+    s = numpy.random.uniform(0, 100, 1000) # ndarray
     print(f"Processing {len(s)} data points...")
-    data = pandas.DataFrame({"name_colonne":s})
+    data = pandas.DataFrame({"Colonne":s})
     print(data.describe())
     print("Generating visualization...\n")
-    matplotlib.pyplot.hist(data["name_colonne"])
+    matplotlib.pyplot.hist(data["Colonne"]) # enregistre le graphique dans un fichier
     name_img = "matrix_analysis.png"
     matplotlib.pyplot.savefig(name_img)
     print("Analysis complete!")
